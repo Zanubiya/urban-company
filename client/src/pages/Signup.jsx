@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import API from "client\src\api\api.js"
+import API from "../api/api"
 
 function Signup() {
   const [name, setName] = useState("");
