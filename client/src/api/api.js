@@ -2,7 +2,7 @@ import axios from "axios";
 
 // your backend URL (Render)
 const API = axios.create({
-  baseURL: "https://urban-company-4db5.onrender.com/",
+  baseURL: "https://urban-company-4db5.onrender.com/api",
 });
 
 export default API;
