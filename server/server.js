@@ -18,20 +18,9 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://urban-company-git-master-zanus-projects.vercel.app"
 ];
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: true,
     credentials: true
   })
 );
