@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import API from "client\src\api\api.js"
 
 function VerifyOtp() {
   const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ function VerifyOtp() {
       console.log("Verifying OTP for:", email);
       
       // Verify OTP
-      const res = await axios.post("http://localhost:5000/api/auth/verify-otp", {
+      const res = await API.post("/api/auth/verify-otp", {
         email, otp
       });
       
@@ -45,7 +46,7 @@ function VerifyOtp() {
       
       console.log("Logging in with temp password");
       
-      const loginRes = await axios.post("http://localhost:5000/api/auth/login", {
+      const loginRes = await API.post("/api/auth/login", {
         email,
         password: tempPassword
       });
@@ -85,7 +86,7 @@ function VerifyOtp() {
     
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/auth/resend-otp", { email });
+      await API.post("/api/auth/resend-otp", { email });
       alert("OTP resent successfully! Check your email.");
       setResendCountdown(60);
       
