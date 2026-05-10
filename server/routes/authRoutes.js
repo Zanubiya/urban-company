@@ -4,6 +4,7 @@ const {
   signup,
   verifyOtp,
   login,
+  resendOtp,
 } = require("../controllers/authController");
 
 router.post("/signup", signup);
