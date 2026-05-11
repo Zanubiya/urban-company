@@ -16,7 +16,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://urban-company-git-master-zanus-projects.vercel.app"
+  "https://urban-company-rho.vercel.app/"
 ];
 app.use(
   cors({
